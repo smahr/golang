@@ -43,6 +43,7 @@ func Calculate(w http.ResponseWriter, r *http.Request) {
 		donCredits := caculateDonationCredit(salesAmount)
 
 		calculationResult := CalculationResult{Result: donCredits}
+		w.Header().Set("Content-Type", "application/json") // this
 		json.NewEncoder(w).Encode(calculationResult)
 	}
 
