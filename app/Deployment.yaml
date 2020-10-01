@@ -15,8 +15,8 @@ spec:
     spec:
       containers:
       - name: application
-        image: sebastianmahr/samplegoapp
-        imagePullPolicy: IfNotPresent
+        image: sebastianmahr/samplegoapp:test
+        imagePullPolicy: Always
         ports:
           - containerPort: 3000
 ---
@@ -31,3 +31,4 @@ spec:
     targetPort: 3000
   selector:
     name: go-web-app
+---
